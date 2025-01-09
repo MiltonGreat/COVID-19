@@ -19,6 +19,21 @@ This project performs exploratory data analysis (EDA) on a COVID-19 dataset usin
   11. Which year had the highest total number of cases?
   12. In 2020, on which day did Quebex have the highest number of COVID-19 deaths?
 
+### Quality Issues
+
+- Missing case or mortality data for certain provinces.
+- Inconsistent reporting across regions or time periods.
+- Outliers during peaks in case counts or death rates.
+
+Cleaning/Transformation:
+- Interpolate missing case counts using time-based averages.
+- Smooth trends using moving averages to reduce noise.
+- Encode categorical variables like "province" for regional analysis.
+
+Known Limitations:
+- Limited to Canadian data; trends may not generalize globally.
+- Unaccounted external factors like policy changes or vaccination rates.
+
 #### 2. Data
 
 This dataset is obtained from the 'Government of Canada Public Healht Infobase' and contains information on daily reported COVID-19 cases as well as total COVID-19 deaths in all provinces of Canada. The data contained in the table describes COVID-19 in Canada in terms of number of cases and deaths at the provincial and national levels from January 31, 2020 to present time. You will be working with the `covid19-can.csv` file located in the `Data` folder.
