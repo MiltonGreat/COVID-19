@@ -1,56 +1,57 @@
-# COVID-19
+# COVID-19 Data Analysis
 
-### Summary and Recommendations
+### Overview
 
-#### 1. Overview
+This project performs an extensive analysis of COVID-19 data in Canada, focusing on trends and insights derived from the data. The script processes the data, cleans it, and generates meaningful visualizations and summaries.
 
-This project performs exploratory data analysis (EDA) on a COVID-19 dataset using Python. The aim is to investigate key trends and statistics such as the total number of cases, mortality rates, and provincial variations in the impact of the pandemic. The questions asked include the following:
+## Dataset
 
-  1. What is the total number of COVID-19 cases reported in each province?
-  2. Which province has the highest average rate of COVID-19 per capita?
-  3. What is the average rate of COVID-19 deaths per capita?
-  4. What is the overall mortality rate of COVID-19 in Canada?
-  5. What is the mortality rate per province?
-  6. What are the total reported cases per year?
-  7. For each year in the dataset, find the month with the highest total number of cases.
-  8. For each year, find the month with the lowest total number of cases.
-  9. Which year had the highest mortality rate?
-  10. Which year had the lowest total number of cases?
-  11. Which year had the highest total number of cases?
-  12. In 2020, on which day did Quebex have the highest number of COVID-19 deaths?
+The dataset used is `covid19-download.csv`, which contains COVID-19 case and death information across Canadian provinces over time. Key columns include:
+- `prname`: Province name
+- `date`: Reporting date
+- `totalcases`: Total reported cases
+- `numdeaths`: Number of reported deaths
+- Other columns capturing rates and demographic information
 
-### Quality Issues
+## Features of the Analysis
 
-- Missing case or mortality data for certain provinces.
-- Inconsistent reporting across regions or time periods.
-- Outliers during peaks in case counts or death rates.
+### Data Cleaning and Preprocessing
+- Converted date column to datetime format.
+- Created additional columns for `year` and `month`.
+- Interpolated missing values for numeric columns and filled categorical values using the most frequent value (mode).
+- Removed records with invalid data (e.g., "Canada" as a province).
+- Identified and removed outliers using the Z-score method.
 
-Cleaning/Transformation:
-- Interpolate missing case counts using time-based averages.
-- Smooth trends using moving averages to reduce noise.
-- Encode categorical variables like "province" for regional analysis.
+### Key Outputs
+1. **Total COVID-19 Cases by Province:**
+   - Summed up the total cases for each province.
 
-Known Limitations:
-- Limited to Canadian data; trends may not generalize globally.
-- Unaccounted external factors like policy changes or vaccination rates.
+2. **Average Rate of Cases per Capita by Province:**
+   - Computed the average rate of cases per capita.
 
-#### 2. Data
+3. **Province with the Highest Average Rate:**
+   - Highlighted the province with the highest per-capita rate.
 
-This dataset is obtained from the 'Government of Canada Public Healht Infobase' and contains information on daily reported COVID-19 cases as well as total COVID-19 deaths in all provinces of Canada. The data contained in the table describes COVID-19 in Canada in terms of number of cases and deaths at the provincial and national levels from January 31, 2020 to present time. You will be working with the `covid19-can.csv` file located in the `Data` folder.
+4. **Average Rate of Deaths per Capita:**
+   - Calculated for each province.
 
-#### 3. Exploratory Data Analysis Process
-   
-  1. Data Loading
-  2. Handling Missing Data
-  3. Date Handling
-  4. Province-Level Data Aggregation
-  5. Exploratory Data Analysis
-      - Total Cases by Province
-      - Rate of Cases per Capita
-      - Mortality Rate
-      - Yearly Analysis
-      - Quebec in 2020
-#### 4. Key Findings
+5. **Overall Mortality Rate in Canada:**
+   - Computed as the percentage of deaths among total cases.
+
+6. **Yearly and Monthly Trends:**
+   - Total cases and mortality rates by year.
+   - Months with the highest and lowest case counts for each year.
+
+7. **Day with the Highest Deaths for Quebec in 2020:**
+   - Identified the day with the highest number of deaths in Quebec in 2020.
+
+### Visualizations
+- **Bar Chart:** Total cases by province.
+- **Line Plot:** Total reported cases per year.
+- **Heatmap:** Cases by month and year.
+- **Rolling Averages:** 7-day averages for cases and deaths.
+
+### Key Findings
       
 - Total Number of Cases per Province: Ontario had the highest number of total COVID-19 cases (~223.5 million), followed by Quebec (~185.7 million). Nunavut reported the fewest cases (~6.4 million).
 - Rate of Cases per Capita: Prince Edward Island had the highest average rate of COVID-19 cases per capita (15,328.76), while Quebec and Alberta also had high rates (8,916.04 and 8,436.12, respectively).
@@ -60,7 +61,12 @@ This dataset is obtained from the 'Government of Canada Public Healht Infobase' 
 - Monthly Trends: The month with the highest total cases varied by year, with December 2023 reporting 24.3 million cases. February 2020 had the lowest monthly case total (52 cases).
 - Quebec in 2020: December 26, 2020, was the deadliest day in Quebec, with 7662 deaths.
 
-#### 5.  Source
+### Future Work
+- Include regional breakdowns within provinces.
+- Incorporate vaccination data for additional insights.
+- Extend the analysis to include international comparisons.
+
+### Source
 
 https://health-infobase.canada.ca/covid-19/visual-data-gallery/
 
