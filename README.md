@@ -19,7 +19,7 @@ I want to answer the following questions:
 9. Which year had the highest mortality rate?
 10. Which year had the lowest total number of cases?
 11. Which year had the highest total number of cases?
-12. In 2020, on which day did Quebex have the highest number of COVID-19 deaths?
+12. In 2020, on which day did Quebec have the highest number of COVID-19 deaths?
 
 ### Dataset
 
