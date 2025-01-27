@@ -21,13 +21,6 @@ I want to answer the following questions:
 11. Which year had the highest total number of cases?
 12. In 2020, on which day did Quebex have the highest number of COVID-19 deaths?
 
-### Executive Summary:
-
-- Prince Edward Island had the highest average rate of COVID-19 cases per capita (15,637 cases per 100,000).
-- Quebec had the highest COVID-19 mortality rate (1.25%).
-- 2024 saw the highest number of total COVID-19 cases (1.21 billion cases), while 2020 had the lowest.
-- December was consistently the month with the highest number of cases across most years.
-
 ### Dataset
 
 The dataset used is `covid19-download.csv`, which contains COVID-19 case and death information across Canadian provinces over time. 
